@@ -1,5 +1,9 @@
 package com.aps.echo;
 
+//import com.datastax.astra.client.DataAPIClient;
+//import com.datastax.astra.client.Database;
+import com.datastax.astra.client.DataAPIClient;
+import com.datastax.astra.client.Database;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -13,13 +17,9 @@ public class EchoApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(EchoApplication.class, args);
+
     }
 
-    @RequestMapping("/user")
-    public String user(@AuthenticationPrincipal OAuth2User principal) {
-        System.out.println(principal);
-        return principal.getAttribute("name");
-    }
 
 
 }

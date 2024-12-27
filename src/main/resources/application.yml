@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: echo-app
   security:
     oauth2:
       client:
@@ -6,3 +8,16 @@ spring:
           github:
             client-id: Iv23li8ZlzrZJivZZ9PT
             client-secret: 36bf9672495a8b81746809879e63188608b2a330
+#  data:
+#    cassandra:
+#      keyspace-name: main
+#      username: biKzTSjNOZwfZrEQRkMClByQ
+#      password: Dg0GFoYzuh88kkhFnLZ4a5ZvXv3sReiTKO2i8.L_ZP_d73pZ1ogpe88yULShMKT_cvw2i92yJYnJo.+CQ62o8dB0nKJoDG7MWKoPcp,7JaDQO7SYHXyi7sQ44_5lmq.H
+#      schema-action: recreate-drop-unused
+#      request:
+#        timeout: 10s
+#      connection:
+#        connect-timeout: 10s
+#        init-query-timeout: 10s
+#
+
