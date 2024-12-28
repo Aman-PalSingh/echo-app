@@ -11,8 +11,8 @@ spring:
   data:
     cassandra:
       keyspace-name: main
-      username: qaxPziAqUnRaiuCZdUXiPUaO
-      password: CAS_GngBbkM4NZk46J2QMzQL…PGkCPPICm0PS4xw.UNg8RaM
+      username: EftUFihbaLYxtyeXgLQqZhwa
+      password: IH_2_5G4MvNO5+3tEArMmPlL.JC-uxjNzItXnQw+ZiemEFhu-D0HJW3Xc2DGaQhxkPL48p2gXGyY,5aBS8w_-,jdeaDb,eB-W.b+B8-s9ce7szTGFjhlhJKTB-PLmnLR
       schema-action: recreate-drop-unused
       request:
         timeout: 10s
@@ -20,13 +20,14 @@ spring:
         connect-timeout: 10s
         init-query-timeout: 10s
 
-  astra.db:
-    id: qaxPziAqUnRaiuCZdUXiPUaO
+astra.db:
+    id: EftUFihbaLYxtyeXgLQqZhwa
     region: eu-west-1
     keyspace: main
-    application.token: AstraCS:qaxPziAqUnRaiuCZdUXiPUaO:687a015d6e6fda5d65fc286f8cb3b6e9e48ffd1c5b16dfbb331e2ca6102f242b
+    application:
+      token: AstraCS:EftUFihbaLYxtyeX…d587cb2410cb6e2dc4d5017
 
-  datastax.astra:
-    secure-connect-bundle: secure-connect-echo-app.zip
+datastax.astra:
+  secure-connect-bundle: secure-connect-echo-app.zip
 
 
