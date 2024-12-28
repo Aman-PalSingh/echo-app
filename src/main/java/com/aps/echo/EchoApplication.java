@@ -33,10 +33,10 @@ public class EchoApplication {
     }
     @PostConstruct
     public void init(){
-        folderRepository.save(new Folder("Aman Pal Singh", "inbox", "magenta"));
-        folderRepository.save(new Folder("Aman Pal Singh", "sent", "blue"));
-        folderRepository.save(new Folder("Aman Pal Singh", "important", "gray"));
-        folderRepository.save(new Folder("Aman Pal Singh", "misc", "orange"));
+        folderRepository.save(new Folder("Aman-PalSingh", "personal", "magenta"));
+        folderRepository.save(new Folder("Aman-PalSingh", "private", "blue"));
+        folderRepository.save(new Folder("Aman-PalSingh", "promotions", "gray"));
+        folderRepository.save(new Folder("Aman-PalSingh", "misc", "orange"));
     }
 
 
