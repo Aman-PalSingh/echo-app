@@ -19,7 +19,6 @@
         }
 
         html, body {
-            height: 100%;
             width: 100%;
             display: flex;
             align-items: center; /* Center vertically */
@@ -49,18 +48,21 @@
             grid-area: header;
             background-color: #f0f0f0;
             padding: 1rem;
+            display: flex;
+            justify-content: space-between;
         }
 
         nav {
             grid-area: nav;
             background-color: #e0e0e0;
             padding: 0.5rem;
+            height
         }
 
         main {
             grid-area: content;
             background-color: #ffffff;
-            padding: 1rem;
+
         }
 
         aside {
@@ -80,7 +82,8 @@
 <body>
 <div class="container">
     <header>
-        <h1>Hi, Name!</h1>
+        <h1> Echo</h1>
+        <h2>Hi, Name!</h2>
     </header>
 
     <nav>
@@ -89,7 +92,21 @@
     </nav>
 
     <main>
-        <p>Email list</p>
+        <div class="card" th:if="${messageList}">
+            <div class="card-header">
+                <h2>Inbox</h2>
+            </div>
+            <div class="list-group">
+                <a th:each="message : ${messageList}" href="#" class="list-group-item list-group-item-action ">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1" th:text="${message.subject}">List group item heading</h5>
+                        <small th:text="${message.receivedAgo}">3 days ago</small>
+                    </div>
+                    <p class="mb-1" th:text=${message.to}>Some placeholder content in a paragraph.</p>
+                </a>
+
+            </div>
+        </div>
     </main>
 
     <aside>
