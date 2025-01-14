@@ -92,44 +92,22 @@
     </nav>
 
     <main>
-        <div>
-            <form>
-                <fieldset disabled>
-                    <div class="form-group">
-                        <label for="disabledSelect">From</label>
-                        <select id="disabledSelect" class="form-control">
-                            <option th:text="${message.from}">Disabled select</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="disabledSelect">To</label>
-                        <select id="disabledSelect" class="form-control">
-                            <option th:text="${toIds}">Disabled select</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="disabledSelect">Subject</label>
-                        <select id="disabledSelect" class="form-control">
-                            <option th:text="${message.subject}"></option>
-                        </select>
-                    </div>
-                </fieldset>
-            </form>
-            <div class="card text-center">
-                <div class="card-body">
-                    <p class="card-text" th:text="${message.body}">With supporting text below as a natural lead-in to
-                        additional content.</p>
-                </div>
+        <form>
+            <div class="mb-3">
+                <label for="toIds" class="form-label">To</label>
+                <input type="text" class="form-control" id="toIds" aria-describedby="emailHelp" th:value="${toIds}">
+                <div id="toIdHelp" class="form-text">Enter comma separated github id's of recipients</div>
             </div>
-        </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a class="btn btn-primary me-md-2" type="button"
-               style="margin-top: 20px; background-color: #ACE1AF; color:black; border-color:black;"
-               th:href="@{'/compose/?toIds='+ ${message.from}}">Reply</a>
-            <a class="btn btn-primary" type="button"
-               th:href="@{'/compose/?toIds=' + ${toIds} + ',' + ${message.from}}"
-               style="margin-top: 20px; background-color: #ACE1AF; color:black; border-color:black;">Reply All</a>
-        </div>
+            <div class="mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="subject">
+            </div>
+            <div class="mb-3">
+                <label for="body" class="">Body</label>
+                <textarea rows="10" type="text" class="form-control" id="body"> </textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
 
     </main>
 

@@ -87,6 +87,10 @@
     </header>
 
     <nav>
+        <div style="display:flex; justify-content:space-around ; padding:7px; margin-bottom:7px">
+            <a class="btn btn-primary btn-lg" href="/compose" type="button" style= "background-color:#6550a6; border:none">Compose</a>
+        </div>
+
         <div th:insert="components/folder-list :: folder-list(panelName = 'Folders', folders = ${defaultFolders})"></div>
         <div th:insert="components/folder-list :: folder-list(panelName = 'User Folders', folders = ${userFolders})"></div>
     </nav>
@@ -108,6 +112,7 @@
 
             </div>
         </div>
+<!--        <p th:text="${messageList}"></p>-->
     </main>
 
     <aside>
