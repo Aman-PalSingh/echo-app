@@ -10,6 +10,7 @@ import com.aps.echo.messagelist.MessageListItemRepository;
 import com.datastax.oss.driver.api.core.uuid.Uuids;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -57,9 +58,8 @@ public class EchoApplication {
       messageListItem.setTo(Arrays.asList("Aman-PalSingh", "test0", "test1"));
       messageListItem.setSubject("Test " + i);
       messageListItem.setUnread(true);
-
+      Arrays.asList()
       messageListItemRepository.save(messageListItem);
-
       Message message = new Message();
       message.setId(messageListItemKey.getTimeUUID());
       message.setFrom("Aman-PalSingh");

@@ -92,19 +92,23 @@
     </nav>
 
     <main>
-        <form>
+        <form th:attr="action=@{/sendMessage}" method="POST">
+            <input type="hidden"
+                   th:name="${_csrf.parameterName}"
+                   th:value="${_csrf.token}"
+            />
             <div class="mb-3">
                 <label for="toIds" class="form-label">To</label>
-                <input type="text" class="form-control" id="toIds" aria-describedby="emailHelp" th:value="${toIds}">
+                <input type="text" class="form-control" id="toIds" name="toIds" aria-describedby="emailHelp" th:value="${toIds}">
                 <div id="toIdHelp" class="form-text">Enter comma separated github id's of recipients</div>
             </div>
             <div class="mb-3">
                 <label for="subject" class="form-label">Subject</label>
-                <input type="text" class="form-control" id="subject">
+                <input type="text" class="form-control" id="subject" name="subject">
             </div>
             <div class="mb-3">
                 <label for="body" class="">Body</label>
-                <textarea rows="10" type="text" class="form-control" id="body"> </textarea>
+                <textarea rows="10" type="text" class="form-control" id="body" name="body"> </textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send</button>
         </form>
